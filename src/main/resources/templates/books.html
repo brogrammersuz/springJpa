@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>List of books:</h1>
+<h2 th:each="book:${books}">
+    <h5 th:text="${book.getId()}"></h5>
+    <h5 th:text="${book.getTitle()}"></h5>
+    <h5 th:text="${book.getIsbn()}"></h5>
+    <h5 th:text="${book.getPublisher()}"></h5>
+    <h5 th:each="author: ${book.getAuthors()}">
+        <h6 th:text="${author}"></h6>
+    </h5>
+    <br/>
+</h2>
+
+</body>
+</html>
